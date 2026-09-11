@@ -1,6 +1,6 @@
 ---
 title: "Construindo Aplicações Desktop com Rust e Tauri v2: Por que abandonei o Electron no mec-notes"
-date: 2025-07-14
+date: 2026-09-09
 summary: Como reduzi o consumo de memória de 350MB para menos de 25MB e o tempo de boot para 180ms criando um aplicativo desktop flutuante em Rust e React.
 categories: [Sistemas & Rust]
 tags: [Rust, Tauri v2, React, Desktop, Performance, SQLite]

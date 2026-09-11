@@ -39,8 +39,8 @@
     </div>
     <div class="drawer-temas">
       <p class="drawer-temas-title">Temas</p>
-      {{ range first 12 .Site.Taxonomies.tags.ByCount }}
-      <a href="{{ .Page.RelPermalink }}" class="drawer-tema" onclick="document.getElementById('mobile-nav').classList.remove('open')">#{{ lower .Page.Title }}</a>
+      {{ range partial "blog-tags.html" . }}
+      <a href="{{ .url }}" class="drawer-tema" onclick="document.getElementById('mobile-nav').classList.remove('open')">#{{ lower .name }}</a>
       {{ end }}
       <a href="/tags/" class="drawer-tema drawer-tema-all" onclick="document.getElementById('mobile-nav').classList.remove('open')">Todas as tags →</a>
     </div>

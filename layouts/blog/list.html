@@ -8,8 +8,8 @@
   <aside class="temas">
     <h2>Temas</h2>
     <ul>
-      {{ range first 12 .Site.Taxonomies.tags.ByCount }}
-      <li><a href="{{ .Page.RelPermalink }}">#{{ lower .Page.Title }}</a></li>
+      {{ range partial "blog-tags.html" . }}
+      <li><a href="{{ .url }}">#{{ lower .name }}</a></li>
       {{ end }}
     </ul>
     <a href="/tags/" class="temas-all">Todas as tags →</a>
