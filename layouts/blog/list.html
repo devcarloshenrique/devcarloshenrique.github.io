@@ -21,7 +21,7 @@
       <h2>{{ index $parts 0 }} - {{ index $months (index $parts 1) }}</h2>
       <ul class="post-rows">
         {{ range .Pages.ByDate.Reverse }}
-        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <li><a href="{{ .RelPermalink }}"><span class="row-title">{{ .Title }}</span></a></li>
         {{ end }}
       </ul>
     </section>

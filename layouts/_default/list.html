@@ -1,9 +1,38 @@
 {{ define "main" }}
-<div class="section-head">
+{{ if eq .Kind "term" }}
+{{ $months := dict "01" "Janeiro" "02" "Fevereiro" "03" "Março" "04" "Abril" "05" "Maio" "06" "Junho" "07" "Julho" "08" "Agosto" "09" "Setembro" "10" "Outubro" "11" "Novembro" "12" "Dezembro" }}
+{{ $posts := where .Pages "Section" "blog" }}
+<div class="section-head section-head-slim">
   <h1>{{ .Title }}</h1>
-  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+  <p class="mono" style="font-size:12px;color:var(--muted);margin:.5rem 0 0">{{ len $posts }} publicações</p>
 </div>
-{{ if eq .Kind "taxonomy" }}
+<div class="blog-layout">
+  <aside class="temas">
+    <h2>Temas</h2>
+    <ul>
+      {{ range partial "blog-tags.html" . }}
+      <li><a href="{{ .url }}">#{{ lower .name }}</a></li>
+      {{ end }}
+    </ul>
+    <a href="/tags/" class="temas-all">Todas as tags →</a>
+  </aside>
+  <div class="post-groups">
+    {{ with $posts }}
+    {{ range (.ByDate.Reverse.GroupByDate "2006-01") }}
+    {{ $parts := split .Key "-" }}
+    <section class="post-group">
+      <h2>{{ index $parts 0 }} - {{ index $months (index $parts 1) }}</h2>
+      <ul class="post-rows">
+        {{ range .Pages.ByDate.Reverse }}
+        <li><a href="{{ .RelPermalink }}"><span class="row-title">{{ .Title }}</span></a></li>
+        {{ end }}
+      </ul>
+    </section>
+    {{ end }}
+    {{ end }}
+  </div>
+</div>
+{{ else if eq .Kind "taxonomy" }}
 <ul class="term-index">
   {{ range .Data.Terms.Alphabetical }}
   <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a></li>

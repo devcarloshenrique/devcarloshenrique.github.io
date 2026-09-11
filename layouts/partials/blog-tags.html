@@ -1,0 +1,14 @@
+{{/* Tags usadas por posts do blog (exclui tags só de projetos), top 12 por uso. Retorna slice de {name, url, count}. */}}
+{{ $counts := dict }}
+{{ range where site.RegularPages "Section" "blog" }}
+{{ range .Params.tags }}
+{{ $counts = merge $counts (dict . (add (index $counts . | default 0) 1)) }}
+{{ end }}
+{{ end }}
+{{ $tags := slice }}
+{{ range $name, $count := $counts }}
+{{ with site.GetPage (printf "tags/%s" (urlize $name)) }}
+{{ $tags = $tags | append (dict "name" $name "url" .RelPermalink "count" $count) }}
+{{ end }}
+{{ end }}
+{{ return first 12 (sort $tags "count" "desc") }}
