@@ -1,0 +1,30 @@
+- title: Back-end & Arquitetura
+  description: Sistemas distribuídos, microsserviços e APIs com foco em robustez e manutenibilidade.
+  skills:
+    - { name: Node.js, highlight: true }
+    - { name: TypeScript, highlight: true }
+    - { name: Clean Architecture & SOLID, highlight: true }
+    - { name: Fastify / Express }
+    - { name: C# & .NET, highlight: true }
+    - { name: Prisma ORM / Knex }
+    - { name: TDD & Vitest }
+    - { name: Zod Schema Validation }
+- title: Front-end & Mobile
+  description: Aplicações web e móveis com alta fidelidade visual, performance e usabilidade.
+  skills:
+    - { name: React.js, highlight: true }
+    - { name: Next.js }
+    - { name: React Native, highlight: true }
+    - { name: Tailwind CSS }
+    - { name: State Management (Zustand/Context) }
+    - { name: Performance & Core Web Vitals }
+- title: Sistemas, Infra & Bancos
+  description: Processamento de dados, containerização e ferramentas de baixo nível.
+  skills:
+    - { name: PostgreSQL, highlight: true }
+    - { name: ETL & Data Pipelines, highlight: true }
+    - { name: Rust (Tauri Ecosystem), highlight: true }
+    - { name: Docker & Docker Compose, highlight: true }
+    - { name: Redis Caching }
+    - { name: SQLite }
+    - { name: Git Workflow & CI/CD }

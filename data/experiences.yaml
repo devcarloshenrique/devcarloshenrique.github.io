@@ -1,0 +1,51 @@
+- id: bnb
+  role: Desenvolvedor Full Stack
+  company: Banco do Nordeste do Brasil (BNB)
+  companyUrl: https://www.bnb.gov.br/
+  period: out 2025 - presente
+  current: true
+  location: Fortaleza, CE
+  summary: Atuação em sistemas corporativos críticos e fluxos analíticos de grande escala no maior banco de desenvolvimento regional da América Latina.
+  achievements:
+    - Desenvolvimento de APIs e sistemas bancários críticos utilizando React, Node.js e .NET, garantindo conformidade com padrões de alta segurança e disponibilidade.
+    - Implementação e otimização de fluxos de ETL para processamento de dados massivos, eliminando gargalos severos de consultas concorrentes e reduzindo o tempo de resposta em relatórios estratégicos.
+    - Modelagem e manutenção de queries complexas em PostgreSQL corporativo, preservando integridade transacional e tempos de resposta submétricos.
+  technologies: [React, Node.js, .NET, PostgreSQL, ETL, TypeScript, Docker]
+- id: nibo
+  role: Desenvolvedor Full Stack
+  company: Nibo
+  companyUrl: https://www.nibo.com.br/
+  period: jul 2021 - out 2023
+  current: false
+  location: Remoto / Rio de Janeiro
+  summary: Arquitetura e engenharia de software para uma das principais fintechs de gestão financeira e contábil do Brasil.
+  achievements:
+    - Liderança na arquitetura e engenharia de uma Central de Vídeos em Node.js e React, criando uma infraestrutura preparada para consumo massivo e integração com múltiplos microsserviços.
+    - Reconstrução técnica do portal de vendas e conversão, corrigindo falhas históricas de performance, elevando pontuação no Core Web Vitals e garantindo responsividade em 100% dos dispositivos.
+    - Criação de um sistema modular de templates para campanhas, reduzindo em mais de 50% o tempo de entrega entre os times de Design e Engenharia.
+  technologies: [Node.js, React, TypeScript, Clean Code, Git, REST APIs, CSS Architecture]
+- id: mtechsp
+  role: Desenvolvedor Full Stack
+  company: MtechSP
+  companyUrl: https://grupomtech.com.br/
+  period: ago 2020 - mai 2021
+  current: false
+  location: São Paulo / Remoto
+  summary: Modernização de sistemas legados e engenharia de módulos administrativos de automação operacional.
+  achievements:
+    - Participação ativa na migração de monólitos legados em PHP para uma arquitetura moderna e desacoplada em Node.js e React.
+    - Construção de um gerenciador de arquivos com geração automatizada de relatórios em PDF, eliminando rotinas manuais de clientes e reduzindo custos operacionais.
+    - Estruturação de bancos de dados relacionais SQL e interfaces analíticas com virtualização de dados via React Table.
+  technologies: [Node.js, React, PHP, SQL, React Table, PDF Generation]
+- id: opovo
+  role: Desenvolvedor Web
+  company: Grupo de Comunicação O POVO
+  companyUrl: https://www.opovo.com.br/
+  period: jun 2019 - jul 2020
+  current: false
+  location: Fortaleza, CE
+  summary: Manutenção de portais de notícias de altíssimo tráfego, scripts de automação e sustentação de páginas editoriais.
+  achievements:
+    - Sustentação e otimização de performance para páginas com picos de milhares de acessos simultâneos durante coberturas em tempo real.
+    - Desenvolvimento de scripts personalizados e resolução de incidentes críticos em produção com foco em tempo de resposta ágil.
+  technologies: [PHP, JavaScript, HTML5, CSS3, Git]
