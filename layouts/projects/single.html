@@ -1,0 +1,17 @@
+{{ define "main" }}
+<p><a href="/projects/" class="back-link">← Voltar para Projetos</a></p>
+<div class="section-head">
+  <span class="badge">{{ .Params.category }}</span>
+  <h1>{{ .Title }}</h1>
+  <p class="lead">{{ .Description }}</p>
+</div>
+{{ with .Params.gallery }}
+<div class="gallery">{{ range . }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />{{ end }}</div>
+{{ end }}
+<div class="article-body">{{ .Content }}</div>
+<div class="tech-row">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
+<div class="project-actions">
+  <a href="{{ .Params.github }}" target="_blank" rel="noopener" class="btn-primary">Ver Repositório no GitHub ↗</a>
+  <a href="/projects/" class="link-inline">Fechar</a>
+</div>
+{{ end }}

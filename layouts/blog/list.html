@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="section-head">
+  <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem">
+    <span class="badge">Snippets &amp; Ensaios</span>
+    <span class="mono" style="font-size:12px;color:var(--muted)">{{ len .Pages }} publicações</span>
+  </div>
+  <h1>{{ .Title }}</h1>
+  <p class="lead">{{ .Description }}</p>
+</div>
+<div class="search-box">
+  <span class="icon">⌕</span>
+  <input id="blog-search" type="text" placeholder="Buscar por tópico, tecnologia (ex: Rust, SQLite, TDD, Haversine)..." />
+</div>
+<div class="pills" id="cat-pills">
+  <a href="/blog/" class="pill active" data-cat="">Todas</a>
+  {{ range $name, $tax := .Site.Taxonomies.categories }}
+  <a href="{{ $tax.Page.RelPermalink }}" class="pill" data-cat="{{ $name }}">{{ $name }}</a>
+  {{ end }}
+</div>
+<div class="grid-2" id="post-grid">
+  {{ range .Pages.ByDate.Reverse }}
+  <a href="{{ .RelPermalink }}" class="card post-card" data-search="{{ lower (printf "%s %s %s" .Title .Description (delimit .Params.tags " ")) }}" data-cat="{{ delimit .Params.categories "|" }}">
+    <div>
+      <div class="post-meta">
+        <span class="badge">{{ index .Params.categories 0 }}</span>
+        <span class="rt">{{ .Params.readingTime }}</span>
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p class="summary">{{ .Description }}</p>
+    </div>
+    <div>
+      <div class="post-tags">{{ range first 4 .Params.tags }}<span class="tag">#{{ . }}</span>{{ end }}{{ if gt (len .Params.tags) 4 }}<span class="mono" style="font-size:10px;color:var(--faint)">+{{ sub (len .Params.tags) 4 }}</span>{{ end }}</div>
+      <div style="display:flex;justify-content:space-between;margin-top:.75rem">
+        <span class="read-more">Ler Snippet Completo →</span>
+        <time>{{ .Date.Format "02/01/2006" }}</time>
+      </div>
+    </div>
+  </a>
+  {{ end }}
+</div>
+<div class="empty" id="no-results" hidden>Nenhum snippet ou artigo encontrado para o filtro aplicado.</div>
+<script>
+(function () {
+  var input = document.getElementById('blog-search');
+  var cards = Array.prototype.slice.call(document.querySelectorAll('#post-grid .post-card'));
+  var empty = document.getElementById('no-results');
+  input.addEventListener('input', function () {
+    var q = input.value.toLowerCase().trim();
+    var visible = 0;
+    cards.forEach(function (c) {
+      var hit = !q || c.getAttribute('data-search').indexOf(q) !== -1;
+      c.style.display = hit ? '' : 'none';
+      if (hit) visible++;
+    });
+    empty.hidden = visible !== 0;
+  });
+})();
+</script>
+{{ end }}

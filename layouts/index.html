@@ -1,0 +1,106 @@
+{{ define "main" }}
+{{ $p := .Site.Params }}
+<section class="card intro-card">
+  <div class="intro-top">
+    <div class="intro-id">
+      <button class="avatar-btn" onclick="document.getElementById('photo-dialog').showModal()" title="Clique para ampliar" aria-label="Foto de perfil de Carlos Henrique">
+        <img src="{{ $p.avatar }}" alt="Carlos Henrique" class="avatar" onerror="this.onerror=null;this.src='{{ $p.avatarFallback }}'" />
+      </button>
+      <dialog id="photo-dialog" class="photo-dialog">
+        <div class="photo-box">
+          <button class="dialog-close" onclick="document.getElementById('photo-dialog').close()" aria-label="Fechar foto">✕</button>
+          <img src="{{ $p.avatar }}" alt="Carlos Henrique" class="photo-big" onerror="this.onerror=null;this.src='{{ $p.avatarFallback }}'" />
+          <h3>{{ $p.shortName }}</h3>
+          <p class="mono photo-role">Software Engineer</p>
+          <p class="photo-bio">Desenvolvedor Full Stack no Banco do Nordeste do Brasil (BNB) • Engenharia de Computação (IFCE)</p>
+          <div class="photo-links">
+            <a href="{{ $p.github }}" target="_blank" rel="noopener" class="btn-light">GitHub</a>
+            <a href="{{ $p.linkedin }}" target="_blank" rel="noopener" class="btn-light">LinkedIn</a>
+          </div>
+        </div>
+      </dialog>
+      <div>
+        <div class="intro-title">
+          <h1>{{ $p.author }}</h1>
+          <span class="status"><span class="dot"></span>&nbsp;Disponível para novos projetos</span>
+        </div>
+        <p class="intro-sub">{{ $p.role }}</p>
+        <p class="meta-row"><span>{{ $p.location }}</span></p>
+      </div>
+    </div>
+    <div class="intro-actions">
+      <a href="{{ $p.github }}" target="_blank" rel="noopener" class="btn-light">GitHub ↗</a>
+      <a href="/contato/" class="btn-primary">Contato</a>
+    </div>
+  </div>
+  <div class="core-row">
+    <span class="core-label">Core:</span>
+    {{ range slice "Node.js" "React" "TypeScript" "Rust (Tauri)" "PostgreSQL" ".NET" }}<span class="tag">{{ . }}</span>{{ end }}
+  </div>
+</section>
+
+<div class="stack">
+  <section>
+    <div class="article-body">{{ .Content }}</div>
+    <div class="grid-3" style="margin-top:1.5rem">
+      <div class="card mini-card"><span class="k">Experiência</span><span class="v">5+ anos</span><p>Desenvolvimento de sistemas &amp; APIs</p></div>
+      <div class="card mini-card"><span class="k">Papel Atual</span><span class="v" style="font-size:1.125rem">Banco do Nordeste</span><p>Dev Full Stack (BNB Corporativo)</p></div>
+      <div class="card mini-card"><span class="k">Engenharia</span><span class="v" style="font-size:1.125rem">IFCE</span><p>Bacharelado em Eng. de Computação</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Experiência Profissional</h2><span class="count">{{ len hugo.Data.experiences }} empresas</span></div>
+    <div class="stack" style="gap:1.5rem">
+      {{ range hugo.Data.experiences }}
+      <article class="card exp-card">
+        <div class="exp-top">
+          <div><h3>{{ .role }}</h3><a href="{{ .companyUrl }}" target="_blank" rel="noopener" class="company">{{ .company }} ↗</a></div>
+          <div class="period">{{ .period }}{{ if .current }}<span class="pill-now">Atual</span>{{ end }}</div>
+        </div>
+        <p>{{ .summary }}</p>
+        <ul class="achieve">{{ range .achievements }}<li><span>{{ . }}</span></li>{{ end }}</ul>
+        <div class="tech-row">{{ range .technologies }}<span class="tag">{{ . }}</span>{{ end }}</div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Formação Acadêmica</h2><span class="count">Graduação &amp; Técnico</span></div>
+    <div class="grid-2">
+      {{ range hugo.Data.education }}
+      <article class="card mini-card" style="padding:1.25rem">
+        <div style="display:flex;justify-content:space-between;gap:.5rem;align-items:flex-start">
+          <h3 style="margin:0;font-size:1rem">{{ .degree }}</h3>
+          <span class="tag" style="white-space:nowrap">{{ .period }}</span>
+        </div>
+        <p class="mono" style="font-size:12px;font-weight:600;color:var(--violet);margin:.5rem 0">{{ .institution }} • {{ .status }}</p>
+        <p style="font-size:12px;color:var(--muted)">{{ .description }}</p>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section>
+    <div class="section-title"><h2>Matriz de Competências</h2><span class="count">Stack Técnica</span></div>
+    <div class="grid-2 skills-grid">
+      {{ range hugo.Data.skills }}
+      <article class="card mini-card" style="padding:1.25rem">
+        <h3 class="mono" style="margin:0;font-size:12px;text-transform:uppercase;letter-spacing:.05em">{{ .title }}</h3>
+        <p style="font-size:12px;color:var(--muted)">{{ .description }}</p>
+        <div class="tech-row" style="margin-top:.75rem">{{ range .skills }}<span class="tag{{ if .highlight }} tag-hl{{ end }}">{{ .name }}</span>{{ end }}</div>
+      </article>
+      {{ end }}
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div><p class="cta-kicker">Próximos passos</p><h3>Explore os projetos práticos e ensaios técnicos</h3></div>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+      <a href="/projects/" class="btn-primary">Ver Projetos →</a>
+      <a href="/blog/" class="btn-light">Ler Snippets &amp; Blog →</a>
+    </div>
+  </section>
+</div>
+{{ end }}

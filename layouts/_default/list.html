@@ -1,0 +1,31 @@
+{{ define "main" }}
+<div class="section-head">
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+</div>
+{{ if eq .Kind "taxonomy" }}
+<div class="pills">
+  <a href="/blog/" class="pill">← Todas</a>
+  {{ range $name, $tax := .Site.Taxonomies.categories }}
+  <a href="{{ $tax.Page.RelPermalink }}" class="pill{{ if eq $name $.Title }} active{{ end }}">{{ $name }}</a>
+  {{ end }}
+</div>
+{{ end }}
+<div class="grid-2">
+  {{ range .Pages.ByDate.Reverse }}
+  <a href="{{ .RelPermalink }}" class="card post-card">
+    <div>
+      <div class="post-meta">
+        {{ with .Params.categories }}{{ range . }}<span class="badge">{{ . }}</span>{{ end }}{{ end }}
+        {{ with .Params.readingTime }}<span class="rt">{{ . }}</span>{{ end }}
+      </div>
+      <h2>{{ .Title }}</h2>
+      <p class="summary">{{ .Description }}</p>
+    </div>
+    <span class="read-more">Ler Snippet Completo →</span>
+  </a>
+  {{ else }}
+  <div class="empty">Nenhum conteúdo aqui ainda.</div>
+  {{ end }}
+</div>
+{{ end }}

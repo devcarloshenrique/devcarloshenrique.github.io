@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="section-head">
+  <span class="badge">{{ .Title }}</span>
+  <h1 style="margin-top:.75rem">Contato &amp; Oportunidades</h1>
+  <p class="lead">{{ .Description }}</p>
+</div>
+<div class="contact-grid">
+  <div class="card contact-card">
+    <span class="k">E-mail Direto</span>
+    <p class="email">{{ .Site.Params.email }}</p>
+    <button class="link-inline" id="copy-email">Copiar e-mail</button>
+  </div>
+  <div class="card contact-card">
+    <span class="k">Localização &amp; Redes</span>
+    <p class="mono" style="font-size:.875rem;color:var(--body)">{{ .Site.Params.location }}</p>
+    <div class="social-row">
+      <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub</a><span style="color:var(--line)">•</span>
+      <a href="{{ .Site.Params.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</div>
+<div class="card form-card">
+  <h2>Enviar Mensagem Direta</h2>
+  <p class="hint">Preencha o formulário abaixo para enviar um e-mail ou proposta.</p>
+  <form action="https://formspree.io/f/{{ .Site.Params.formspreeID }}" method="POST">
+    <div class="form-row">
+      <div class="field"><label for="input-name">Seu Nome</label><input id="input-name" name="name" type="text" required placeholder="Ex: Ana Silva" /></div>
+      <div class="field"><label for="input-email">Seu E-mail</label><input id="input-email" name="email" type="email" required placeholder="Ex: ana@empresa.com" /></div>
+    </div>
+    <div class="field" style="margin-bottom:1rem"><label for="input-message">Mensagem ou Proposta</label><textarea id="input-message" name="message" required rows="4" placeholder="Olá Carlos, gostaria de conversar sobre uma oportunidade ou projeto..."></textarea></div>
+    <div class="form-end"><button type="submit" class="btn-primary btn-submit">Enviar Mensagem →</button></div>
+  </form>
+</div>
+<script>
+(function () {
+  var btn = document.getElementById('copy-email');
+  btn.addEventListener('click', function () {
+    navigator.clipboard.writeText('{{ .Site.Params.email }}').then(function () {
+      btn.textContent = 'E-mail copiado!';
+      setTimeout(function () { btn.textContent = 'Copiar e-mail'; }, 2000);
+    });
+  });
+})();
+</script>
+{{ end }}
