@@ -3,15 +3,13 @@
 <div class="article">
   <div class="section-head article-head">
     <div class="article-meta">
-      {{ range .Params.categories }}<span class="badge">{{ . }}</span>{{ end }}
-      <span class="mono article-sep">•</span>
       <span class="mono article-date"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><time>{{ .Date.Format "02/01/2006" }}</time></span>
       <span class="mono article-sep">•</span>
       <span class="mono article-date"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>{{ .Params.readingTime }}</span>
     </div>
     <h1>{{ .Title }}</h1>
     <p class="lead">{{ .Description }}</p>
-    <div class="post-tags article-tags">{{ range .Params.tags }}<span class="tag">#{{ . }}</span>{{ end }}<button class="head-share" id="share-post" title="Copiar link do artigo">Compartilhar</button></div>
+    <div class="post-tags article-tags">{{ range .Params.tags }}{{ $t := . }}{{ with site.GetPage (printf "tags/%s" (urlize $t)) }}<a class="tag-link" href="{{ .RelPermalink }}">#{{ $t }}</a>{{ end }}{{ end }}</div>
   </div>
   <div class="article-body">{{ .Content }}</div>
   <div class="author-box">
@@ -35,13 +33,6 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-  var share = document.getElementById('share-post');
-  share.addEventListener('click', function () {
-    navigator.clipboard.writeText(window.location.href).then(function () {
-      share.textContent = '✓ Copiado';
-      setTimeout(function () { share.textContent = 'Compartilhar'; }, 2000);
-    });
-  });
   document.querySelectorAll('.highlight').forEach(function (block) {
     var head = document.createElement('div');
     head.className = 'code-head';

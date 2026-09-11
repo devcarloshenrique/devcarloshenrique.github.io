@@ -311,15 +311,13 @@ a.post-card:hover h2 { color: var(--violet); }
 
 /* Article */
 .progress { position: fixed; top: 0; left: 0; height: 2.5px; background: var(--violet); width: 0; z-index: 50; }
-.head-share { font-family: var(--mono); font-size: 11px; color: var(--gray-600); background: #fff; border: 1px solid var(--line); border-radius: 6px; padding: .25rem .65rem; margin-left: auto; cursor: pointer; box-shadow: var(--shadow-2xs); transition: color .15s, border-color .15s; white-space: nowrap; }
-.head-share:hover { color: var(--ink); border-color: #d1d5db; }
 .article-meta { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin-bottom: 1rem; }
-.article-meta .badge { font-size: 12px; text-transform: none; letter-spacing: 0; }
 .article-sep { font-size: 12px; color: var(--muted); }
 .article-date { display: inline-flex; align-items: center; gap: .25rem; font-size: 12px; color: var(--muted); }
 .article-date svg { color: var(--faint); }
 .article-tags { border-top: none; margin-top: 0; padding-top: .5rem; }
-.article-tags .tag { font-size: 12px; padding: .15rem .65rem; }
+.article-tags .tag-link { font-family: var(--mono); font-size: 12px; color: var(--muted); text-decoration: none; transition: color .15s; }
+.article-tags .tag-link:hover { color: var(--violet); }
 .back-link { font-family: var(--mono); font-size: 12px; color: var(--gray-600); text-decoration: none; padding: .4rem .65rem; border-radius: 6px; transition: color .15s, background-color .15s; }
 .back-link:hover { color: var(--violet); background: var(--line-soft); }
 .article { max-width: 48rem; margin: 0 auto; padding-left: 1.25rem; padding-right: 1.25rem; padding-top: 2rem; padding-bottom: 2rem; }
