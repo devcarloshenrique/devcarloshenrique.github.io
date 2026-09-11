@@ -4,13 +4,12 @@
   {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
 </div>
 {{ if eq .Kind "taxonomy" }}
-<div class="pills">
-  <a href="/blog/" class="pill">← Todas</a>
-  {{ range $name, $tax := .Site.Taxonomies.categories }}
-  <a href="{{ $tax.Page.RelPermalink }}" class="pill{{ if eq $name $.Title }} active{{ end }}">{{ $name }}</a>
+<ul class="term-index">
+  {{ range .Data.Terms.Alphabetical }}
+  <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }} <sup>{{ .Count }}</sup></a></li>
   {{ end }}
-</div>
-{{ end }}
+</ul>
+{{ else }}
 <div class="grid-2">
   {{ range .Pages.ByDate.Reverse }}
   <a href="{{ .RelPermalink }}" class="card post-card">
@@ -28,4 +27,5 @@
   <div class="empty">Nenhum conteúdo aqui ainda.</div>
   {{ end }}
 </div>
+{{ end }}
 {{ end }}
