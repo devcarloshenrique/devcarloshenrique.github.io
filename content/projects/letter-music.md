@@ -7,7 +7,6 @@ github: https://github.com/devcarloshenrique/letter-music
 architecture: Backend em Vertical Slice Architecture, frontend com Feature-Driven Architecture e web scraping headless com Playwright.
 image: /projects/letter-music-home.png
 gallery: [/projects/letter-music-home.png, /projects/letter-music-lyrics.png, /projects/letter-music-karaoke.png]
-featured: true
 weight: 3
 ---
 

@@ -1,9 +1,5 @@
 {{ define "main" }}
 <div class="section-head">
-  <div style="display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.5rem">
-    <span class="badge">✦ Engenharia em Foco</span>
-    <span class="mono" style="font-size:12px;color:var(--muted)">3 projetos selecionados</span>
-  </div>
   <h1>{{ .Title }}</h1>
   <p class="lead">{{ .Description }}</p>
   <div class="pills project-filters" style="padding-top:1.25rem;margin-bottom:0">
@@ -21,7 +17,6 @@
     <div class="project-meta">
       <div class="meta-badges">
         <span class="badge">{{ .Params.category }}</span>
-        {{ if .Params.featured }}<span class="badge badge-amber">✦ Destaque Principal</span>{{ end }}
       </div>
       <a href="{{ .Params.github }}" target="_blank" rel="noopener" class="github-link">github.com/{{ $id }}</a>
     </div>

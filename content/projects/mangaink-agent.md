@@ -6,8 +6,7 @@ tags: [Fastify 5, TypeScript, React 19, TanStack Router, TanStack Query, Docker 
 github: https://github.com/devcarloshenrique/mangaink-agent
 architecture: Arquitetura em monorepo com isolamento de responsabilidades — API Fastify 5, Prisma ORM no PostgreSQL, workers Docker KCC e frontend React 19.
 image: /projects/mangaink-cover.jpg
-gallery: [/projects/mangaink-cover.jpg, /projects/mangaink-icon.png]
-featured: true
+gallery: [/projects/mangaink-cover.jpg]
 weight: 2
 ---
 

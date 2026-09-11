@@ -7,7 +7,6 @@ github: https://github.com/devcarloshenrique/mec-notes
 architecture: Frontend em React 18/TypeScript com Tailwind CSS sobre o runtime de baixo overhead do Tauri v2. Backend em Rust com Rusqlite para persistência local atômica e gerenciamento nativo de janelas Win32.
 image: /projects/mec-notes.png
 gallery: [/projects/mec-notes.png]
-featured: true
 weight: 1
 related_notes: [rust-tauri-desktop-architecture]
 ---

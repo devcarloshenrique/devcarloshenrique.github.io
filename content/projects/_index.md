@@ -1,4 +1,4 @@
 ---
 title: Projetos em Destaque
-description: Seleção aprofundada dos principais projetos de engenharia de software — aplicações desktop de alto desempenho com Rust e Tauri v2, automações conteinerizadas com Docker e arquiteturas web desacopladas.
+description: Uma seleção de trabalhos que mostram como transformo problemas em software funcional, bem arquitetado e pronto para uso.
 ---
