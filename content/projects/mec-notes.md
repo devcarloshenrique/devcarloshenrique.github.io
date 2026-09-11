@@ -9,6 +9,7 @@ image: /projects/mec-notes.png
 gallery: [/projects/mec-notes.png]
 featured: true
 weight: 1
+related_notes: [rust-tauri-desktop-architecture]
 ---
 
 Desenvolvido com foco em máxima produtividade e performance, o mec-notes opera como uma janela flutuante com suporte a transparência, atalhos globais de sistema (Ctrl+Shift+Space), persistência local ultra-rápida em SQLite nativo e baixo consumo de memória RAM (< 25MB). Conta com suporte a notas adesivas destacáveis com sincronização bidirecional em tempo real e engine WYSIWYG Muya.

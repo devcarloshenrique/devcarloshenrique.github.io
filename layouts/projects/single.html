@@ -9,6 +9,18 @@
 <div class="gallery">{{ range . }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy" />{{ end }}</div>
 {{ end }}
 <div class="article-body">{{ .Content }}</div>
+{{ with .Params.related_notes }}
+<section class="related-notes">
+  <h2>Notas relacionadas</h2>
+  <ul class="post-rows">
+    {{ range . }}
+    {{ with site.GetPage (printf "blog/%s" .) }}
+    <li><a href="{{ .RelPermalink }}"><span class="row-title">{{ .Title }}</span></a></li>
+    {{ end }}
+    {{ end }}
+  </ul>
+</section>
+{{ end }}
 <div class="tech-row">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
 <div class="project-actions">
   <a href="{{ .Params.github }}" target="_blank" rel="noopener" class="btn-primary">Ver Repositório no GitHub ↗</a>
