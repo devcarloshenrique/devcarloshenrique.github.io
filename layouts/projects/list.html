@@ -32,7 +32,6 @@
       <div>
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <p class="project-desc">{{ .Description }}</p>
-        <div class="callout"><span class="k">Arquitetura &amp; Decisão Técnica</span><p>{{ .Params.architecture }}</p></div>
         <div class="tech-row" style="border:none;padding-top:0">{{ range .Params.tags }}<span class="tag">{{ . }}</span>{{ end }}</div>
         <div class="project-actions">
           <a href="{{ .RelPermalink }}" class="btn-violet">Ver Especificações Completas →</a>
