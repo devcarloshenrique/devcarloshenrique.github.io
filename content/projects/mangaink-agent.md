@@ -1,6 +1,6 @@
 ---
 title: mangaink-agent
-description: Aplicação self-hosted para download, conversão em lote (KCC) e envio automático de mangás para o Kindle.
+description: Aplicação self-hosted para download, conversão em lote (KCC) e envio automático de mangás para o Kindle, com fila de agendamentos, interface em português e geração automática de EPUB, MOBI e CBZ.
 category: Full Stack
 tags: [Fastify 5, TypeScript, React 19, TanStack Router, TanStack Query, Docker (KCC), Prisma 7, PostgreSQL, Redis, Zod]
 github: https://github.com/devcarloshenrique/mangaink-agent
