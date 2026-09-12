@@ -1,6 +1,6 @@
 ---
 title: mec-notes
-description: Bloco de notas flutuante e sticky notes moderno para Windows com persistência SQLite e engine WYSIWYG.
+description: Bloco de notas flutuante e sticky notes moderno para Windows, com notas adesivas destacáveis, sincronização em tempo real, atalhos globais e consumo mínimo de memória — pensado para produtividade sem fricção.
 category: Sistemas & Desktop
 tags: [Tauri v2, Rust, React 18, TypeScript, Tailwind CSS, SQLite (rusqlite), WYSIWYG Muya, Prism.js]
 github: https://github.com/devcarloshenrique/mec-notes
