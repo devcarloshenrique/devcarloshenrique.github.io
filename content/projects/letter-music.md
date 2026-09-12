@@ -1,6 +1,6 @@
 ---
 title: letter-music
-description: Plataforma interativa de aprendizado de idiomas com músicas, letras sincronizadas e modo karaokê.
+description: Plataforma interativa de aprendizado de idiomas com músicas, letras sincronizadas e modo karaokê, com coleta automatizada de conteúdo e acompanhamento do progresso.
 category: Full Stack
 tags: [Node.js, Express, TypeScript, React, Vite, Tailwind CSS, Vertical Slice (VSA), Playwright, Docker Compose]
 github: https://github.com/devcarloshenrique/letter-music
