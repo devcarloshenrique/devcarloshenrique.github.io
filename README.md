@@ -1,6 +1,6 @@
-# Carlos Henrique | Software Engineer — Portfolio & Tech Blog
+# Carlos Henrique | Portfolio & Tech Blog
 
-Portfólio de Engenharia de Software + blog técnico gerado com **Hugo** (binário Go, sem Node.js e sem `node_modules`), pronto para hospedar no **GitHub Pages**.
+Portfólio de Engenharia de Software + blog técnico gerado com **Hugo** (binário Go), pronto para hospedar no **GitHub Pages**.
 
 ## Rodar localmente
 
@@ -17,7 +17,7 @@ hugo --minify --cleanDestinationDir   # build estático em public/
 - `content/` — Sobre (`_index.md`), `projects/` (3 case studies), `blog/` (5 posts), `contato.md`
 - `data/` — experiências, formação e skills em YAML
 - `layouts/` — tema próprio replicando o visual atual (IBM Plex + violeta)
-- `assets/css/` — CSS puro (sem Tailwind, sem build JS)
+- `assets/css/` — CSS puro
 - `static/` — `perfil.png`, `projects/*`, `.nojekyll`
 
 ## Deploy no GitHub Pages (`devcarloshenrique.github.io`)
@@ -26,4 +26,4 @@ hugo --minify --cleanDestinationDir   # build estático em public/
 2. Em `Settings → Pages → Source`, selecione **GitHub Actions**.
 3. O workflow `.github/workflows/deploy.yml` instala o Hugo extended, roda `hugo --minify` e publica `public/` automaticamente a cada push na `main`.
 
-O formulário de contato é um `<form>` HTML puro com `action="https://formspree.io/f/meaqneva"` — sem backend, sem variáveis de ambiente.
+O formulário de contato é um `<form>` HTML puro com `action="https://formspree.io/f/meaqneva"`.
