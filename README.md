@@ -1,4 +1,4 @@
-# Carlos Henrique — Portfólio & Tech Blog (Hugo, 100% estático)
+# Carlos Henrique | Software Engineer — Portfolio & Tech Blog
 
 Portfólio de Engenharia de Software + blog técnico gerado com **Hugo** (binário Go, sem Node.js e sem `node_modules`), pronto para hospedar no **GitHub Pages**.
 
