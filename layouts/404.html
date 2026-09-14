@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>{{ partial "head.html" . }}</head>
+  <body>
+    {{ partial "header.html" . }}
+    <main class="container page">
+      <div class="section-head">
+        <span class="badge">Erro 404</span>
+        <h1 style="margin-top:.75rem">Página não encontrada</h1>
+        <p class="lead">O endereço que você tentou acessar não existe ou foi movido. Volte ao início ou explore os conteúdos abaixo.</p>
+      </div>
+      <div class="card" style="padding:2rem;text-align:center">
+        <p class="mono" style="font-size:4rem;font-weight:700;color:var(--ink);margin:0;line-height:1">404</p>
+        <p style="color:var(--muted);margin:1rem 0 1.5rem">Nada por aqui — mas o portfólio continua logo ali.</p>
+        <div style="display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap">
+          <a href="/" class="btn-primary">Voltar ao Início →</a>
+          <a href="/projects/" class="btn-light">Ver Projetos</a>
+          <a href="/blog/" class="btn-light">Ler Snippets &amp; Blog</a>
+        </div>
+      </div>
+    </main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>
