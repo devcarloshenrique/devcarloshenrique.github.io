@@ -32,6 +32,16 @@ jobs:
       - name: Build static site
         run: hugo --minify --cleanDestinationDir
 
+      - name: Deploy to VPS via Rsync
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          SOURCE: "public/"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          TARGET: "/home/ubuntu/mec-lab/portfolio-data/html/"
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
